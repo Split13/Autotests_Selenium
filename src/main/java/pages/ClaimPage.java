@@ -16,6 +16,6 @@ public class ClaimPage {
     public SelenideElement space = $(byXpath("//div[@class='oxd-form-actions']"));
 
     public SelenideElement buttonSearch = $(byXpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']"));
-    public SelenideElement recordsFound = $(byXpath("//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']"));
+    public SelenideElement recordsFound = $(byXpath("//span[@class='oxd-text oxd-text--span']"));
 
 }
