@@ -3,9 +3,11 @@ package tests;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;
+import org.w3c.dom.Text;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 
 public class ClaimTest extends BaseTest{
@@ -15,14 +17,24 @@ public class ClaimTest extends BaseTest{
      * 3. Input incorrect data format.
       */
     @Test
-    public void foundRecords() {
+    public void fromDateSelecting() {
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.claimPage.iconClaim.click();
         app.claimPage.fromDateTextBox.click();
-        app.claimPage.fromDateTextBox.setValue("2023-06-18");
-        app.claimPage.buttonSearch.click();
-        int records = app.claimPage.recordsFound.findElements(byXpath("//div[@class='oxd-table-card']")).size();
-        System.out.println(records);
+        app.claimPage.dropCalendarMenu.click();
+
+    }
+
+    @Test
+    public void selectEventName() throws InterruptedException {
+        app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
+        app.claimPage.iconClaim.click();
+        app.claimPage.eventName.click();
+        Thread.sleep(1000);
+        app.claimPage.dropMenuEventName.getWrappedElement().findElement(byText("Accommodation")).click();
+        Configuration.holdBrowserOpen = true;
+
+
 
     }
 
