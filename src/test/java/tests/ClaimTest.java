@@ -15,7 +15,7 @@ public class ClaimTest extends BaseTest{
      * 1. Open section Claim.
      * 2. Click on cell From Date.
      * 3. Input incorrect data format.
-      */
+     */
     @Test
     public void fromDateSelecting() {
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
@@ -25,6 +25,11 @@ public class ClaimTest extends BaseTest{
 
     }
 
+    /**
+     * 1. Open section Claim.
+     * 2. Click on Event Name.
+     * 3. Choose Accommodation.
+     */
     @Test
     public void selectEventName() throws InterruptedException {
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
@@ -34,9 +39,9 @@ public class ClaimTest extends BaseTest{
         app.claimPage.dropMenuEventName.getWrappedElement().findElement(byText("Accommodation")).click();
         Configuration.holdBrowserOpen = true;
 
-
-
     }
+
+
 
 
 

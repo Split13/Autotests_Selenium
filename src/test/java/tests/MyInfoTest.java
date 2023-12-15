@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Driver;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
@@ -11,7 +12,7 @@ import java.nio.file.Paths;
 
 import static com.codeborne.selenide.FileDownloadMode.PROXY;
 import static com.codeborne.selenide.Selectors.byXpath;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class MyInfoTest extends BaseTest{
 
@@ -38,9 +39,11 @@ public class MyInfoTest extends BaseTest{
      * 1. Section "My Info" opens.
      * 2. Memberships opens.
      * 3. Download Record file.
+     * 4. Check download file.
      */
     @Test
     public void fileDownload(){
+
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.myInfoPage.iconMyInfo.click();
         app.myInfoPage.Memberships.click();
@@ -49,11 +52,6 @@ public class MyInfoTest extends BaseTest{
 
     }
 
-    @Test
-    public void openHelp(){
-        app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
-        app.myInfoPage.iconHelp.click();
 
-    }
 
 }

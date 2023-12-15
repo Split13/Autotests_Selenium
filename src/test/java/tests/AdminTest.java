@@ -22,6 +22,13 @@ public class AdminTest extends BaseTest {
 
     }
 
+    /**
+     * 1. Open Admin.
+     * 2. Choose User Role Admin.
+     * 3. Choose status Enabled.
+     * 4. Click on Search.
+     * 5. Show records result.
+     */
     @Test
     public void roleAdminFind(){
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
