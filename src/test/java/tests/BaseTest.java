@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.FileDownloadMode;
 import org.testng.annotations.*;
 import utils.*;
 
@@ -16,9 +17,8 @@ public class BaseTest {
 
     @BeforeTest
     public void setup(){
-        Configuration.proxyEnabled = true;
-        Configuration.fileDownload = PROXY;
-        Configuration.downloadsFolder = ("C:\\Users\\split\\Downloads");
+        Configuration.fileDownload = FileDownloadMode.FOLDER;
+        Configuration.downloadsFolder = ("C:\\Автотесты\\Скаченные файлы\\");
         open("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
     }

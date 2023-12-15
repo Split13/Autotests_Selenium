@@ -16,4 +16,5 @@ public class MyInfoPage extends BasePage {
     public SelenideElement saveButton = $(byXpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']"));
     public SelenideElement Memberships = $(byXpath("//a[@href='/web/index.php/pim/viewMemberships/empNumber/7']"));
     public SelenideElement buttonDownload = $(byXpath("//button/i[@class='oxd-icon bi-download']"));
+    public SelenideElement iconHelp = $(byXpath("//i[@class='oxd-icon bi-question-lg']"));
 }

@@ -46,5 +46,14 @@ public class MyInfoTest extends BaseTest{
         app.myInfoPage.Memberships.click();
         File report = $(byXpath("//button/i[@class='oxd-icon bi-download']")).download();
         System.out.println("Does file exist? " + report.exists());
+
     }
+
+    @Test
+    public void openHelp(){
+        app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
+        app.myInfoPage.iconHelp.click();
+
+    }
+
 }

@@ -11,7 +11,6 @@ public class App extends BasePage{
     public LoginPage loginPage = new LoginPage();
     public BuzzPage buzzPage = new BuzzPage();
     public ClaimPage claimPage = new ClaimPage();
-    public CssPage cssPage = new CssPage();
     public  MyInfoPage myInfoPage = new MyInfoPage();
     public  TimePage timePage = new TimePage();
     public PIMPage pimPage = new PIMPage();
