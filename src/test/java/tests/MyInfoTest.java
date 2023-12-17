@@ -1,21 +1,25 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Driver;
+import com.codeborne.selenide.*;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
+
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import static com.codeborne.selenide.FileDownloadMode.PROXY;
+import java.util.concurrent.TimeUnit;
+
+import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverConditions.url;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MyInfoTest extends BaseTest{
-
-
 
     /**
      * 1. Section "My Info" opens.
@@ -35,8 +39,6 @@ public class MyInfoTest extends BaseTest{
 
     }
 
-
-
     /**
      * 1. Section "My Info" opens.
      * 2. Memberships opens.
@@ -45,7 +47,6 @@ public class MyInfoTest extends BaseTest{
      */
     @Test
     public void fileDownload(){
-
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.myInfoPage.iconMyInfo.click();
         app.myInfoPage.Memberships.click();
@@ -54,6 +55,22 @@ public class MyInfoTest extends BaseTest{
 
     }
 
+    /**
+     * 1. Login.
+     * 2. Help Page open
+     * 3. Switch to Window Help Page
+     * 4. Check URL
+     * @throws InterruptedException
+     */
+    @Test
+    public void openHelp() throws InterruptedException {
+        app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
+        app.myInfoPage.iconHelp.click();
+        Selenide.switchTo().window(1);
+        getWebDriver().manage().timeouts().pageLoadTimeout(02, TimeUnit.SECONDS);
+        webdriver().shouldHave(url("https://starterhelp.orangehrm.com/hc/en-us"));
+
+    }
 
 
     /**

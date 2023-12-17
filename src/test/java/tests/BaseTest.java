@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.FileDownloadMode;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import utils.*;
 
@@ -20,6 +21,7 @@ public class BaseTest {
         Configuration.fileDownload = FileDownloadMode.FOLDER;
         Configuration.downloadsFolder = ("C:\\Автотесты\\Скаченные файлы\\");
         open("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+
 
     }
 
