@@ -1,7 +1,8 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
+import io.qameta.allure.testng.Tag;
+import jdk.jfr.Description;
 import org.testng.annotations.Test;
 
 public class BuzzTest extends BaseTest {
@@ -10,6 +11,8 @@ public class BuzzTest extends BaseTest {
      * Section "Buzz" opens.
      */
     @Test
+    @Description("")
+    @Tag("")
     public void openBuzz() {
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.buzzPage.iconBuzz.click();
@@ -24,6 +27,8 @@ public class BuzzTest extends BaseTest {
      * MostLikedPosts opens.
      */
     @Test
+    @Description("")
+    @Tag("")
     public void openMostLikedPosts() {
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.buzzPage.iconBuzz.click();

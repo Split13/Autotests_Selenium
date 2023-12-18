@@ -7,10 +7,7 @@ import org.testng.annotations.*;
 import utils.*;
 
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import static com.codeborne.selenide.FileDownloadMode.PROXY;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class BaseTest {
@@ -29,7 +26,7 @@ public class BaseTest {
 
     @AfterTest
     public void tearDown() {
-
+        closeWebDriver();
     }
 
 
