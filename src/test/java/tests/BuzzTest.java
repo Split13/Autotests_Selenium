@@ -17,8 +17,6 @@ public class BuzzTest extends BaseTest {
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.buzzPage.iconBuzz.click();
         app.buzzPage.headerBuzz.shouldHave(Condition.exactText("Buzz"));
-        Configuration.holdBrowserOpen = true;
-
 
     }
 

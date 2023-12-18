@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.testng.Tag;
 import jdk.jfr.Description;
 import org.openqa.selenium.Keys;

@@ -38,7 +38,6 @@ public class ClaimTest extends BaseTest{
         app.claimPage.eventName.click();
         Thread.sleep(1000);
         app.claimPage.dropMenuEventName.getWrappedElement().findElement(byText("Accommodation")).click();
-        Configuration.holdBrowserOpen = true;
 
     }
 
