@@ -44,7 +44,6 @@ public class AdminTest extends BaseTest {
         app.adminPage.searchButton.shouldBe(Condition.visible, Duration.ofSeconds(5));
         int adminRecords = app.claimPage.recordsFound.findElements(byXpath("//div[@class='oxd-table-card']")).size();
         System.out.println(adminRecords);
-        Configuration.holdBrowserOpen = true;
 
     }
 

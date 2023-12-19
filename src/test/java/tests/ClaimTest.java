@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import io.qameta.allure.testng.Tag;
 import jdk.jfr.Description;
 import org.testng.annotations.Test;
@@ -22,7 +23,8 @@ public class ClaimTest extends BaseTest{
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.claimPage.iconClaim.click();
         app.claimPage.fromDateTextBox.click();
-        app.claimPage.dropCalendarMenu.click();
+        app.claimPage.dropCalendarMenuToday.click();
+        Configuration.holdBrowserOpen = true;
 
     }
 
