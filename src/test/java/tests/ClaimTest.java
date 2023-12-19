@@ -23,7 +23,7 @@ public class ClaimTest extends BaseTest{
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.claimPage.iconClaim.click();
         app.claimPage.fromDateTextBox.click();
-        app.claimPage.dropCalendarMenuToday.click();
+        app.claimPage.dropCalendarMenu.click();
         Configuration.holdBrowserOpen = true;
 
     }

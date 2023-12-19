@@ -12,7 +12,7 @@ public class ClaimPage {
      */
     public SelenideElement iconClaim = $(byXpath("//a[@href='/web/index.php/claim/viewClaimModule']"));
     public SelenideElement fromDateTextBox = $(byXpath("(//input[@placeholder='yyyy-mm-dd'])[1]"));
-    public SelenideElement dropCalendarMenuToday = $(byXpath("//div[@class='oxd-calendar-date --selected --today']"));
+    public SelenideElement dropCalendarMenu = $(byXpath("//div[@class='oxd-calendar-date --selected --today']"));
     public SelenideElement eventName = $(byXpath("//div[@class='oxd-select-text oxd-select-text--active']"));
     public SelenideElement dropMenuEventName = $(byXpath("//div[@class='oxd-select-dropdown --positon-bottom']"));
     public SelenideElement errorMessage = $(byXpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']"));
