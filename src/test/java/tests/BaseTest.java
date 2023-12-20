@@ -2,6 +2,8 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.FileDownloadMode;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import utils.*;
@@ -16,9 +18,8 @@ public class BaseTest {
     @BeforeTest
     public void setup(){
         Configuration.fileDownload = FileDownloadMode.FOLDER;
-        Configuration.downloadsFolder = ("C:\\Автотесты\\Скаченные файлы\\");
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         open("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
 
     }
 

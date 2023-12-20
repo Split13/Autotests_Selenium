@@ -33,6 +33,8 @@ public class AdminTest extends BaseTest {
      * 5. Show records result.
      */
     @Test
+    @Description("")
+    @Tag("")
     public void roleAdminFind(){
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.adminPage.adminTab.click();
@@ -43,7 +45,6 @@ public class AdminTest extends BaseTest {
         app.adminPage.searchButton.click();
         app.adminPage.searchButton.shouldBe(Condition.visible, Duration.ofSeconds(5));
         int adminRecords = app.claimPage.recordsFound.findElements(byXpath("//div[@class='oxd-table-card']")).size();
-        System.out.println(adminRecords);
 
     }
 

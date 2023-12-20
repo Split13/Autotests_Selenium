@@ -19,12 +19,13 @@ public class ClaimTest extends BaseTest{
      * 3. Input incorrect data format.
      */
     @Test
+    @Description("")
+    @Tag("")
     public void fromDateSelecting() {
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.claimPage.iconClaim.click();
         app.claimPage.fromDateTextBox.click();
         app.claimPage.dropCalendarMenu.click();
-        Configuration.holdBrowserOpen = true;
 
     }
 
@@ -34,6 +35,8 @@ public class ClaimTest extends BaseTest{
      * 3. Choose Accommodation.
      */
     @Test
+    @Description("")
+    @Tag("")
     public void selectEventName() throws InterruptedException {
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.claimPage.iconClaim.click();

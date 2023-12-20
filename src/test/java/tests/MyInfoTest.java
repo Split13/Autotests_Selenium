@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.webdriver;
@@ -49,11 +50,13 @@ public class MyInfoTest extends BaseTest{
      * 4. Check download file.
      */
     @Test
+    @Description("")
+    @Tag("")
     public void fileDownload(){
         app.loginPage.login(app.userCredentials.adminLogin, app.userCredentials.adminPassword);
         app.myInfoPage.iconMyInfo.click();
         app.myInfoPage.Memberships.click();
-        File report = $(byXpath("//button/i[@class='oxd-icon bi-download']")).download();
+        File report = app.myInfoPage.buttonDownload.download();
         System.out.println("Does file exist? " + report.exists());
 
     }
@@ -71,7 +74,7 @@ public class MyInfoTest extends BaseTest{
         app.myInfoPage.iconHelp.click();
         Selenide.switchTo().window(1);
         getWebDriver().manage().timeouts().pageLoadTimeout(02, TimeUnit.SECONDS);
-        webdriver().shouldHave(url("https://starterhelp.orangehrm.com/hc/en-us"));
+        webdriver().shouldHave(url("https://starterhelp.orangehrm.com/hc/en-us"), Duration.ofSeconds(42));
 
     }
 
